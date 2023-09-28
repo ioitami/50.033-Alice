@@ -1,0 +1,181 @@
+{
+    "name": "PlayerInputs",
+    "maps": [
+        {
+            "name": "PlayerFull",
+            "id": "6d347d72-a4bb-4caa-b56b-107472f92806",
+            "actions": [
+                {
+                    "name": "move",
+                    "type": "Value",
+                    "id": "0bafcfa2-e54e-4c90-8d2a-ab8210399bf9",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "jump",
+                    "type": "Button",
+                    "id": "c5aabff3-e096-48e6-9fd1-c2952f294521",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "jumphold",
+                    "type": "Button",
+                    "id": "12362d7c-eaa3-4a37-a32d-ffad98eec409",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.3,pressPoint=1.401298E-45)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "dash",
+                    "type": "Button",
+                    "id": "630659c4-ea03-49bc-b62f-898550e331e7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "glide",
+                    "type": "Button",
+                    "id": "1f8f2fec-e58c-4836-abe1-415d6335f965",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "c99f02cb-e203-490c-bf1d-07875dd4bc04",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "71d24891-ddcd-4e1b-9295-af9de4fac0de",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "65566882-a331-47af-a104-c16dda59c09a",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "1ff229a7-6513-44c9-b222-b3e984a25269",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "24d062df-1edd-4a26-b4b6-61e2e1fa92ec",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "57b48c22-a3f3-4611-9e12-830083bab327",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "748d774e-da3d-42ad-aba3-46ddf39bf7d2",
+                    "path": "<Keyboard>/c",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d56a91f4-2af5-4700-8f0f-fae31ddc3329",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c2571cd-eaf2-4701-ab5f-21667622fdf6",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "glide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b5963ed-ae04-4a57-8512-053f6b69709e",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "jumphold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
