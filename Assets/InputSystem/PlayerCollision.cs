@@ -11,13 +11,17 @@ public class PlayerCollision : MonoBehaviour
 
     [Header("Check Collisions")]
     public bool onGround;
+    public bool cannotGlide;
 
     [Space]
 
     [Header("Collision Edits")]
     public float collisionRadius = 0.25f;
-    public Vector2 bottomOffset, rightOffset, leftOffset;
+    public Vector2 rightOffset, leftOffset;
     public Vector3 onGroundColliderSize;
+    public Vector2 bottomOffset;
+    public Vector3 minGlideColliderSize;
+    public Vector2 bottomOffset2;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,7 @@ public class PlayerCollision : MonoBehaviour
     void Update()
     {
         onGround = Physics2D.OverlapBox((Vector2)transform.position + bottomOffset, onGroundColliderSize, 90f, groundLayer);
+        cannotGlide = Physics2D.OverlapBox((Vector2)transform.position + bottomOffset, minGlideColliderSize, 90f, groundLayer);
     }
 
     void OnDrawGizmos()
@@ -37,7 +42,9 @@ public class PlayerCollision : MonoBehaviour
 
         //var positions = new Vector2[] { bottomOffset, rightOffset, leftOffset };
 
+        // Draw visible gizmos on scene
         Gizmos.DrawWireCube((Vector2)transform.position  + bottomOffset, onGroundColliderSize);
+        Gizmos.DrawWireCube((Vector2)transform.position + bottomOffset2, minGlideColliderSize);
         Gizmos.DrawWireSphere((Vector2)transform.position + rightOffset, collisionRadius);
         Gizmos.DrawWireSphere((Vector2)transform.position + leftOffset, collisionRadius);
 

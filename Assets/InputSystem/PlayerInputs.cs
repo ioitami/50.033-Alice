@@ -51,7 +51,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""id"": ""12362d7c-eaa3-4a37-a32d-ffad98eec409"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(duration=0.3,pressPoint=1.401298E-45)"",
+                    ""interactions"": ""Hold(duration=0.2,pressPoint=1.401298E-45)"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -155,7 +155,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""d56a91f4-2af5-4700-8f0f-fae31ddc3329"",
                     ""path"": ""<Keyboard>/x"",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""dash"",
