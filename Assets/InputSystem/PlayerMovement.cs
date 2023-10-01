@@ -32,9 +32,14 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Bool Stats")]
     public bool canMove = true;
-    private bool moving = false;
     public bool faceRightState = true;
+
+
+    private bool moving = false;
     private bool isDashing = false;
+
+    // Body color of Player
+    private Color staminaCol = Color.white;
 
 
     // Start is called before the first frame update
@@ -42,18 +47,17 @@ public class PlayerMovement : MonoBehaviour
     {
         collisionDetect = this.GetComponent<PlayerCollision>();
         rigidBody = this.GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
         xRaw = Input.GetAxisRaw("Horizontal");
         yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(xRaw, yRaw);
         //Debug.Log(dir);
+
+
     }
 
     void FixedUpdate()
@@ -83,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(int value)
     {
-        //Vector2 movement = new Vector2(value, 0);
+       //Vector2 movement = new Vector2(value, 0);
        rigidBody.velocity = new Vector2(value * speed, rigidBody.velocity.y);
     }
 
@@ -96,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
         else if (value == 1 && !faceRightState)
         {
             faceRightState = true;
-        }
+        } 
     }
 
     public void Jump()
@@ -116,11 +120,13 @@ public class PlayerMovement : MonoBehaviour
         if(stamina > 0 && canMove == true)
         {
             // dont want any other inputs during the dash
-            StartCoroutine(NoMove(dashDuration + 0.15f));
+            StartCoroutine(NoMove(dashDuration + 0.13f));
 
             // reduce stamina by dash cost amount
+            // update color of player (stamina bar)
             // set player vector speed to 0 before executing dash. This allows finetune control for players during and after dash.
             stamina -= dashCost;
+            UpdateColor(stamina, maxStamina);
             rigidBody.velocity = Vector2.zero;
 
             Vector2 dashDir = new Vector2(0f, 0f);
@@ -144,6 +150,8 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Dash Direction: " + dashDir);
 
             rigidBody.velocity += dashDir * dashSpeed;
+
+            StartCoroutine(NoGravity(dashDuration + 0.12f));
             StartCoroutine(Dashing(dashDuration));
         }
     }
@@ -158,22 +166,20 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        // If player lands on Ground (Layer 3), recharges stamina
         if (col.gameObject.layer == 3)
         {
             stamina = maxStamina;
+            UpdateColor(stamina, maxStamina);
         }
     }
 
     IEnumerator Dashing(float time)
     {
-        // set grav to 0 as dash will be unaffected by any other forces
         isDashing = true;
-        rigidBody.gravityScale = 0;
 
         yield return new WaitForSeconds(time);
 
-        // sets grav back to normal. Sets velocity to a small amount to pad the exit dash
-        rigidBody.gravityScale = gravity;
         rigidBody.velocity *= 0.2f;
         isDashing = false;
 
@@ -181,6 +187,7 @@ public class PlayerMovement : MonoBehaviour
         if(collisionDetect.onGround == true)
         {
             stamina = maxStamina;
+            UpdateColor(stamina, maxStamina);
         }
     }
     IEnumerator NoMove(float time)
@@ -188,5 +195,18 @@ public class PlayerMovement : MonoBehaviour
         canMove = false;
         yield return new WaitForSeconds(time);
         canMove = true;
+    }
+
+    IEnumerator NoGravity(float time)
+    {
+        rigidBody.gravityScale = 0;
+        yield return new WaitForSeconds(time);
+        rigidBody.gravityScale = gravity;
+    }
+
+    void UpdateColor(float stamina, float maxStamina)
+    {
+        Color updatedCol = new Color(1f, (stamina / maxStamina), (stamina / maxStamina));
+        this.GetComponent<SpriteRenderer>().color = updatedCol;
     }
 }
