@@ -519,11 +519,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+  maxSpeed: 7
   jumpForce: 14
   gravity: 4
   velocity: {x: 0, y: 0, z: 0}
   xRaw: 0
   yRaw: 0
+  currentForce: {x: 0, y: 0}
   dashSpeed: 32
   dashCost: 1
   dashDuration: 0.13

@@ -35,8 +35,9 @@ public class PlayerMovement : MonoBehaviour
     public bool faceRightState = true;
 
 
-    private bool moving = false;
+    public bool moving = false;
     private bool isDashing = false;
+    private bool isGliding = false;
 
     // Body color of Player
     private Color staminaCol = Color.white;
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Get keyboard arrow key presses (up/down/left/right)
         xRaw = Input.GetAxisRaw("Horizontal");
         yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(xRaw, yRaw);
@@ -73,16 +75,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveCheck(int value)
     {
-        if (value == 0)
-        {
-            moving = false;
+        if(canMove == true){
+            if (value == 0)
+            {
+                moving = false;
+            }
+            else
+            {
+                FlipSprite(value);
+                moving = true;
+                Move(value);
+            }
         }
-        else
-        {
-            FlipSprite(value);
-            moving = true;
-            Move(value);
-        }
+
     }
 
     public void Move(int value)
@@ -161,6 +166,8 @@ public class PlayerMovement : MonoBehaviour
         if(collisionDetect.cannotGlide == false && collisionDetect.onGround == false)
         {
             Debug.Log("GLIDING");
+            isGliding = true;
+
         }
     }
 
@@ -193,8 +200,10 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator NoMove(float time)
     {
         canMove = false;
+        moving = false;
         yield return new WaitForSeconds(time);
         canMove = true;
+        MoveCheck((int) xRaw);
     }
 
     IEnumerator NoGravity(float time)
