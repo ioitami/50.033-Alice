@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent quitGame;
 
-    public UnityEvent<int> changeInputMap;
+    public UnityEvent<string> changeRoom;
+
+    public UnityEvent<Vector2, int> addPlayerVelocity;
+
 
     //public IntVariable gameScore;
 
@@ -24,15 +27,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        gameStart.Invoke();
-        Time.timeScale = 1.0f;
-        // subscribe to scene manager scene change
-        SceneManager.activeSceneChanged += SceneSetup;
-    }
-    public void SceneSetup(Scene current, Scene next)
-    {
-        gameStart.Invoke();
-        //SetScore();
+
     }
 
     // Update is called once per frame
@@ -50,6 +45,9 @@ public class GameManager : MonoBehaviour
         //Time.timeScale = 1.0f;
     }
 
-
+    public void AddPlayerVelocity(Vector2 vel, int numFrames)
+    {
+        addPlayerVelocity.Invoke(vel, numFrames);
+    }
 
 }

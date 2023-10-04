@@ -9,23 +9,24 @@ public class PlayerMovement : MonoBehaviour
     private PlayerCollision collisionDetect;
     private Rigidbody2D rigidBody;
 
-    [Header("Stats")]
+    [Header("Movement")]
     public float speed = 10;
     public float jumpForce = 50;
     public float gravity = 4;
 
-    public Vector3 velocity;
+    public Vector2 velocity;
+    public Vector2 currentActingVelocity;
     public float xRaw;
     public float yRaw;
 
     [Space]
-    [Header("Dashing")]
+    [Header("Dash")]
     public float dashSpeed = 20;
     public float dashCost = 1;
     public float dashDuration = 0.3f;
 
     [Space]
-    [Header("Ability Stats")]
+    [Header("Stamina")]
     public float maxStamina = 2;
     public float stamina = 2;
 
@@ -64,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (moving == true && canMove == true)
         {
             Move(faceRightState == true ? 1 : -1);
@@ -218,4 +220,17 @@ public class PlayerMovement : MonoBehaviour
         Color updatedCol = new Color(1f, (stamina / maxStamina), (stamina / maxStamina));
         this.GetComponent<SpriteRenderer>().color = updatedCol;
     }
+
+    public void AddActingVelocity(Vector2 vel, int numFrames)
+    {
+        currentActingVelocity += vel;
+        int frameToStop = Time.frameCount + numFrames;
+        RemoveActingVelocity(vel, frameToStop);
+    }
+    IEnumerator RemoveActingVelocity(Vector2 vel, int frameToStop)
+    {
+        yield return new WaitUntil(() => Time.frameCount > frameToStop);
+        currentActingVelocity -= vel;
+    }
+
 }
