@@ -32,8 +32,8 @@ public class PlayerCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        onGround = Physics2D.OverlapBox((Vector2)transform.position + bottomOffset, onGroundColliderSize, 90f, groundLayer);
-        cannotGlide = Physics2D.OverlapBox((Vector2)transform.position + bottomOffset, minGlideColliderSize, 90f, groundLayer);
+        onGround = Physics2D.OverlapBox((Vector2)transform.position + bottomOffset, onGroundColliderSize, 0f, groundLayer);
+        cannotGlide = Physics2D.OverlapBox((Vector2)transform.position + bottomOffset2, minGlideColliderSize, 0f, groundLayer);
     }
 
     void OnDrawGizmos()

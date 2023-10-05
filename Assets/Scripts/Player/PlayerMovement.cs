@@ -94,7 +94,14 @@ public class PlayerMovement : MonoBehaviour
     public void Move(int value)
     {
        //Vector2 movement = new Vector2(value, 0);
-       rigidBody.velocity = new Vector2(value * speed, rigidBody.velocity.y);
+       if(isGliding == false)
+        {
+            rigidBody.velocity = new Vector2(value * speed, rigidBody.velocity.y);
+        }
+        else
+        {
+            rigidBody.velocity = new Vector2(value * speed * 0.75f, rigidBody.velocity.y);
+        }
     }
 
     void FlipSprite(int value)
@@ -112,10 +119,11 @@ public class PlayerMovement : MonoBehaviour
     public void Jump()
     {
         //Jump only if on ground
-        if(collisionDetect.onGround == true)
+        if (collisionDetect.onGround == true && isGliding == false)
         {
-            //rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
-            //rigidBody.velocity += Vector2.up * jumpForce;
+            isGliding = false;
+
+            ReplaceActingVelocity(new Vector2(rigidBody.velocity.x, 0));
             AddActingVelocity(Vector2.up * jumpForce, 0);
         }
 
@@ -170,7 +178,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("GLIDING");
             isGliding = true;
             ReplaceActingVelocity(Vector2.zero);
-            ChangePlayerGravity(0.2f);
+            ChangePlayerGravity(0.5f);
         }
         else if (isGliding == true && collisionDetect.onGround == false)
         {
