@@ -121,8 +121,6 @@ public class PlayerMovement : MonoBehaviour
         //Jump only if on ground
         if (collisionDetect.onGround == true && isGliding == false)
         {
-            isGliding = false;
-
             ReplaceActingVelocity(new Vector2(rigidBody.velocity.x, 0));
             AddActingVelocity(Vector2.up * jumpForce, 0);
         }
@@ -173,14 +171,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void Glide()
     {
-        if(isGliding == false && collisionDetect.cannotGlide == false && collisionDetect.onGround == false)
+        if(isGliding == false && isDashing == false && canMove == true && 
+            collisionDetect.cannotGlide == false && collisionDetect.onGround == false)
         {
             Debug.Log("GLIDING");
             isGliding = true;
             ReplaceActingVelocity(Vector2.zero);
             ChangePlayerGravity(0.5f);
         }
-        else if (isGliding == true && collisionDetect.onGround == false)
+        else if (isGliding == true && isDashing == false && canMove == true && 
+            collisionDetect.onGround == false)
         {
             isGliding = false;
             ChangePlayerGravity(gravity);
@@ -206,11 +206,11 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(time);
 
-        rigidBody.velocity *= 0.1f;
+        rigidBody.velocity = new Vector2(rigidBody.velocity.x * 0.1f, rigidBody.velocity.y * 0.1f);
         isDashing = false;
 
         // Stamina stays at max if still on ground after dashing
-        if(collisionDetect.onGround == true)
+        if (collisionDetect.onGround == true)
         {
             isGliding = false;
             stamina = maxStamina;
