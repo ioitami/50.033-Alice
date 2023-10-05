@@ -56,7 +56,7 @@ public class ActionManager : MonoBehaviour
     }
 
     public void OnGlideAction(InputAction.CallbackContext context){
-        if (context.performed)
+        if (context.started)
         {
             glide.Invoke();
             //Debug.Log("Glide was performed");

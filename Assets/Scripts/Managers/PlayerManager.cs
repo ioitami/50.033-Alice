@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
     {
         // other instructions
         gameManager.addPlayerVelocity.AddListener(AddPlayerVelocity);
+        gameManager.replacePlayerVelocity.AddListener(ReplacePlayerVelocity);
+        gameManager.changePlayerGravity.AddListener(ChangePlayerGravity);
     }
 
     // Start is called before the first frame update
@@ -27,5 +29,13 @@ public class PlayerManager : MonoBehaviour
     void AddPlayerVelocity(Vector2 vel, int numFrames)
     {
         playerMovement.AddActingVelocity(vel, numFrames);
+    }
+    void ReplacePlayerVelocity(Vector2 vel)
+    {
+        playerMovement.ReplaceActingVelocity(vel);
+    }
+    void ChangePlayerGravity(float gravityScale)
+    {
+        playerMovement.ChangePlayerGravity(gravityScale);
     }
 }

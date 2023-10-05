@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent<string> changeRoom;
 
     public UnityEvent<Vector2, int> addPlayerVelocity;
+    public UnityEvent<Vector2> replacePlayerVelocity;
+    public UnityEvent<float> changePlayerGravity;
 
 
     //public IntVariable gameScore;
@@ -48,6 +50,14 @@ public class GameManager : MonoBehaviour
     public void AddPlayerVelocity(Vector2 vel, int numFrames)
     {
         addPlayerVelocity.Invoke(vel, numFrames);
+    }
+    public void ReplacePlayerVelocity(Vector2 vel)
+    {
+        replacePlayerVelocity.Invoke(vel);
+    }
+    public void ChangePlayerGravity(float gravityScale)
+    {
+        changePlayerGravity.Invoke(gravityScale);
     }
 
 }

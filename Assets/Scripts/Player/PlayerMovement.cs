@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = 4;
 
     public Vector2 velocity;
-    public Vector2 currentActingVelocity;
     public float xRaw;
     public float yRaw;
 
@@ -37,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     public bool moving = false;
-    private bool isDashing = false;
-    private bool isGliding = false;
+    public bool isDashing = false;
+    public bool isGliding = false;
 
     // Body color of Player
     private Color staminaCol = Color.white;
@@ -115,8 +114,9 @@ public class PlayerMovement : MonoBehaviour
         //Jump only if on ground
         if(collisionDetect.onGround == true)
         {
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
-            rigidBody.velocity += Vector2.up * jumpForce;
+            //rigidBody.velocity = new Vector2(rigidBody.velocity.x, 0);
+            //rigidBody.velocity += Vector2.up * jumpForce;
+            AddActingVelocity(Vector2.up * jumpForce, 0);
         }
 
         //rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -134,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
             // set player vector speed to 0 before executing dash. This allows finetune control for players during and after dash.
             stamina -= dashCost;
             UpdateColor(stamina, maxStamina);
-            rigidBody.velocity = Vector2.zero;
+            ReplaceActingVelocity(Vector2.zero);
 
             Vector2 dashDir = new Vector2(0f, 0f);
 
@@ -156,20 +156,26 @@ public class PlayerMovement : MonoBehaviour
             }
             Debug.Log("Dash Direction: " + dashDir);
 
-            rigidBody.velocity += dashDir * dashSpeed;
+            AddActingVelocity(dashDir * dashSpeed, 0);
 
-            StartCoroutine(NoGravity(dashDuration + 0.12f));
+            StartCoroutine(NoGravity(dashDuration + 0.15f));
             StartCoroutine(Dashing(dashDuration));
         }
     }
 
     public void Glide()
     {
-        if(collisionDetect.cannotGlide == false && collisionDetect.onGround == false)
+        if(isGliding == false && collisionDetect.cannotGlide == false && collisionDetect.onGround == false)
         {
             Debug.Log("GLIDING");
             isGliding = true;
-
+            ReplaceActingVelocity(Vector2.zero);
+            ChangePlayerGravity(0.2f);
+        }
+        else if (isGliding == true && collisionDetect.onGround == false)
+        {
+            isGliding = false;
+            ChangePlayerGravity(gravity);
         }
     }
 
@@ -178,6 +184,9 @@ public class PlayerMovement : MonoBehaviour
         // If player lands on Ground (Layer 3), recharges stamina
         if (col.gameObject.layer == 3)
         {
+            isGliding = false;
+            ChangePlayerGravity(gravity);
+
             stamina = maxStamina;
             UpdateColor(stamina, maxStamina);
         }
@@ -189,12 +198,13 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(time);
 
-        rigidBody.velocity *= 0.2f;
+        rigidBody.velocity *= 0.1f;
         isDashing = false;
 
         // Stamina stays at max if still on ground after dashing
         if(collisionDetect.onGround == true)
         {
+            isGliding = false;
             stamina = maxStamina;
             UpdateColor(stamina, maxStamina);
         }
@@ -210,9 +220,9 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator NoGravity(float time)
     {
-        rigidBody.gravityScale = 0;
+        ChangePlayerGravity(0);
         yield return new WaitForSeconds(time);
-        rigidBody.gravityScale = gravity;
+        ChangePlayerGravity(gravity);
     }
 
     void UpdateColor(float stamina, float maxStamina)
@@ -223,14 +233,29 @@ public class PlayerMovement : MonoBehaviour
 
     public void AddActingVelocity(Vector2 vel, int numFrames)
     {
-        currentActingVelocity += vel;
-        int frameToStop = Time.frameCount + numFrames;
-        RemoveActingVelocity(vel, frameToStop);
+        rigidBody.velocity += vel;
+
+        if (numFrames > 0)
+        {
+            int frameToStop = Time.frameCount + numFrames;
+            StartCoroutine(RemoveActingVelocity(vel, frameToStop));
+        }
+
     }
     IEnumerator RemoveActingVelocity(Vector2 vel, int frameToStop)
     {
+        Debug.Log("Waiting for frame");
         yield return new WaitUntil(() => Time.frameCount > frameToStop);
-        currentActingVelocity -= vel;
+        rigidBody.velocity -= vel;
+        Debug.Log("Frame met, removing vel");
+    }
+    public void ReplaceActingVelocity(Vector2 vel)
+    {
+        rigidBody.velocity = vel;
+    }
+    public void ChangePlayerGravity(float gravityScale)
+    {
+        rigidBody.gravityScale = gravityScale;
     }
 
 }
