@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private PlayerCollision collisionDetect;
+    private Animator playerAnimator;
     private Rigidbody2D rigidBody;
 
     [Header("Movement")]
@@ -48,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         collisionDetect = this.GetComponent<PlayerCollision>();
         rigidBody = this.GetComponent<Rigidbody2D>();
+        playerAnimator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -70,6 +72,16 @@ public class PlayerMovement : MonoBehaviour
             Move(faceRightState == true ? 1 : -1);
         }
 
+        if(collisionDetect.onGround == true)
+        {
+            playerAnimator.SetBool("onGround", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("onGround", false);
+        }
+
+
         // DEBUGGING PURPOSES IN THE INSPECTOR TO SHOW VELOCITY OF CHARACTER IN EACH FRAME
         velocity = rigidBody.velocity;
     }
@@ -80,11 +92,13 @@ public class PlayerMovement : MonoBehaviour
             if (value == 0)
             {
                 moving = false;
+                playerAnimator.SetBool("isMoving", false);
             }
             else
             {
                 FlipSprite(value);
                 moving = true;
+                playerAnimator.SetBool("isMoving", true);
                 Move(value);
             }
         }
