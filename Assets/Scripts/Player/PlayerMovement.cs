@@ -100,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
 
         // DEBUGGING PURPOSES IN THE INSPECTOR TO SHOW VELOCITY OF CHARACTER IN EACH FRAME
         velocity = rigidBody.velocity;
+        playerAnimator.SetFloat("ySpeed", rigidBody.velocity.y);
+        playerAnimator.SetFloat("xSpeed", rigidBody.velocity.x);
     }
 
     public void MoveCheck(int value)
@@ -194,6 +196,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("GLIDING");
             isGliding = true;
+            playerAnimator.SetBool("isGliding", true);
             ReplaceActingVelocity(Vector2.zero);
             ChangePlayerGravity(0.5f);
         }
@@ -201,6 +204,7 @@ public class PlayerMovement : MonoBehaviour
             collisionDetect.onGround == false)
         {
             isGliding = false;
+            playerAnimator.SetBool("isGliding", false);
             ChangePlayerGravity(gravity);
         }
     }
@@ -211,6 +215,7 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.layer == 3)
         {
             isGliding = false;
+            playerAnimator.SetBool("isGliding", false);
             ChangePlayerGravity(gravity);
 
             stamina = maxStamina;
@@ -221,16 +226,19 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dashing(float time)
     {
         isDashing = true;
+        playerAnimator.SetBool("isDashing", true);
 
         yield return new WaitForSeconds(time);
 
         rigidBody.velocity = new Vector2(rigidBody.velocity.x * 0.1f, rigidBody.velocity.y * 0.1f);
         isDashing = false;
+        playerAnimator.SetBool("isDashing", false);
 
         // Stamina stays at max if still on ground after dashing
         if (collisionDetect.onGround == true)
         {
             isGliding = false;
+            playerAnimator.SetBool("isGliding", false);
             stamina = maxStamina;
             UpdateColor(stamina, maxStamina);
         }
@@ -257,12 +265,23 @@ public class PlayerMovement : MonoBehaviour
         {
             faceRightState = false;
             playerSprite.flipX = true;
+
+            if (rigidBody.velocity.x > 0.1f)
+            {
+                playerAnimator.SetTrigger("isTurning");
+            }
+
         }
 
         else if (value == 1 && !faceRightState)
         {
             faceRightState = true;
             playerSprite.flipX = false;
+
+            if (rigidBody.velocity.x < -0.1f)
+            {
+                playerAnimator.SetTrigger("isTurning");
+            }
         }
     }
 
