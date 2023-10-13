@@ -9,11 +9,15 @@ public class PlayerMovement : MonoBehaviour
     private PlayerCollision collisionDetect;
     private Animator playerAnimator;
     private Rigidbody2D rigidBody;
+    private SpriteRenderer playerSprite;
+
 
     [Header("Movement")]
     public float speed = 10;
     public float jumpForce = 50;
     public float gravity = 4;
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
 
     public Vector2 velocity;
     public float xRaw;
@@ -39,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     public bool moving = false;
     public bool isDashing = false;
     public bool isGliding = false;
+    public bool jumpHold = false;
 
     // Body color of Player
     private Color staminaCol = Color.white;
@@ -50,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         collisionDetect = this.GetComponent<PlayerCollision>();
         rigidBody = this.GetComponent<Rigidbody2D>();
         playerAnimator = this.GetComponent<Animator>();
+        playerSprite = this.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -66,12 +72,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        // Left/Right Movement
         if (moving == true && canMove == true)
         {
             Move(faceRightState == true ? 1 : -1);
         }
 
+        // For animator
         if(collisionDetect.onGround == true)
         {
             playerAnimator.SetBool("onGround", true);
@@ -81,6 +88,15 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("onGround", false);
         }
 
+        // Adjust fall and jump value
+        if (rigidBody.velocity.y < 0 && isGliding == false && isDashing == false)
+        {
+            rigidBody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        } 
+        else if(rigidBody.velocity.y > 0 && jumpHold == false && isGliding == false && isDashing == false)
+        {
+            rigidBody.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
 
         // DEBUGGING PURPOSES IN THE INSPECTOR TO SHOW VELOCITY OF CHARACTER IN EACH FRAME
         velocity = rigidBody.velocity;
@@ -116,18 +132,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidBody.velocity = new Vector2(value * speed * 0.75f, rigidBody.velocity.y);
         }
-    }
-
-    void FlipSprite(int value)
-    {
-        if (value == -1 && faceRightState)
-        {
-            faceRightState = false;
-        }
-        else if (value == 1 && !faceRightState)
-        {
-            faceRightState = true;
-        } 
     }
 
     public void Jump()
@@ -245,6 +249,30 @@ public class PlayerMovement : MonoBehaviour
         ChangePlayerGravity(0);
         yield return new WaitForSeconds(time);
         ChangePlayerGravity(gravity);
+    }
+
+    void FlipSprite(int value)
+    {
+        if (value == -1 && faceRightState)
+        {
+            faceRightState = false;
+            playerSprite.flipX = true;
+        }
+
+        else if (value == 1 && !faceRightState)
+        {
+            faceRightState = true;
+            playerSprite.flipX = false;
+        }
+    }
+
+    public void JumpHold()
+    {
+        jumpHold = true;
+    }
+    public void JumpRelease()
+    {
+        jumpHold = false;
     }
 
     void UpdateColor(float stamina, float maxStamina)

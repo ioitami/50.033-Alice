@@ -8,6 +8,7 @@ public class ActionManager : MonoBehaviour
 {
     public UnityEvent jump;
     public UnityEvent jumpHold;
+    public UnityEvent jumpRelease;
     public UnityEvent<int> moveCheck;
     public UnityEvent dash;
     public UnityEvent glide;
@@ -21,14 +22,15 @@ public class ActionManager : MonoBehaviour
     {
         if (context.started)
         {
-            Debug.Log("move started");
             int faceDir = context.ReadValue<float>() > 0 ? 1 : -1;
             moveCheck.Invoke(faceDir);
+            //Debug.Log("move started");
         }
         if (context.canceled)
         {
-            Debug.Log("move stopped");
             moveCheck.Invoke(0);
+            //Debug.Log("move stopped");
+            
         }
     }
 
@@ -36,14 +38,17 @@ public class ActionManager : MonoBehaviour
         if (context.performed)
         {
             jump.Invoke();
+            jumpHold.Invoke();
             Debug.Log("Jump was performed");     
         }
-    }
-
-    public void OnJumpHoldAction(InputAction.CallbackContext context){
         if (context.performed)
         {
-            Debug.Log("JumpHold was performed");
+
+        }
+        if (context.canceled)
+        {
+            jumpRelease.Invoke();
+            Debug.Log("Jump released");
         }
     }
 
@@ -51,7 +56,7 @@ public class ActionManager : MonoBehaviour
         if (context.performed)
         {
             dash.Invoke();
-            Debug.Log("Dash was performed");
+            //Debug.Log("Dash was performed");
         }
     }
 
