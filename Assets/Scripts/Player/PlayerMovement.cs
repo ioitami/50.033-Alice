@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     private PlayerCollision collisionDetect;
@@ -28,6 +29,12 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed = 20;
     public float dashCost = 1;
     public float dashDuration = 0.3f;
+
+    [Space]
+    [Header("Glide")]
+    public float glideSpeedMultiplier = 0.8f;
+    public float glideEquipCost = 0.5f;
+    public float glideStamPerSec = 0.25f;
 
     [Space]
     [Header("Stamina")]
@@ -56,6 +63,9 @@ public class PlayerMovement : MonoBehaviour
         rigidBody = this.GetComponent<Rigidbody2D>();
         playerAnimator = this.GetComponent<Animator>();
         playerSprite = this.GetComponent<SpriteRenderer>();
+
+        // Checks if isGliding true. Drains stamina if it is.
+        StartCoroutine(GlidingStamDrain());
     }
 
     // Update is called once per frame
@@ -66,8 +76,6 @@ public class PlayerMovement : MonoBehaviour
         yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(xRaw, yRaw);
         //Debug.Log(dir);
-
-
     }
 
     void FixedUpdate()
@@ -86,6 +94,14 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerAnimator.SetBool("onGround", false);
+        }
+
+        // unequip glider if stamina reaches 0
+        if (stamina <= 0)
+        {
+            isGliding = false;
+            playerAnimator.SetBool("isGliding", false);
+            ChangePlayerGravity(gravity);
         }
 
         // Adjust fall and jump value
@@ -132,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            rigidBody.velocity = new Vector2(value * speed * 0.75f, rigidBody.velocity.y);
+            rigidBody.velocity = new Vector2(value * speed * glideSpeedMultiplier, rigidBody.velocity.y);
         }
     }
 
@@ -191,10 +207,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Glide()
     {
-        if(isGliding == false && isDashing == false && canMove == true && 
+        if(stamina > 0 && isGliding == false && isDashing == false && canMove == true && 
             collisionDetect.cannotGlide == false && collisionDetect.onGround == false)
         {
-            Debug.Log("GLIDING");
+            Debug.Log("EQUIP GLIDER");
+
+            stamina -= glideEquipCost;
+
             isGliding = true;
             playerAnimator.SetBool("isGliding", true);
             ReplaceActingVelocity(Vector2.zero);
@@ -203,9 +222,34 @@ public class PlayerMovement : MonoBehaviour
         else if (isGliding == true && isDashing == false && canMove == true && 
             collisionDetect.onGround == false)
         {
+            Debug.Log("UNEQUIP GLIDER");
+
             isGliding = false;
             playerAnimator.SetBool("isGliding", false);
             ChangePlayerGravity(gravity);
+        }
+
+        if(stamina <= 0)
+        {
+            isGliding = false;
+            playerAnimator.SetBool("isGliding", false);
+            ChangePlayerGravity(gravity);
+        }
+    }
+
+    IEnumerator GlidingStamDrain()
+    {
+        // Continue running until isGliding is set to false
+        while (true)
+        {
+            if (isGliding)
+            {
+                Debug.Log("Stamina Drained from Gliding!");
+                stamina -= glideStamPerSec * Time.deltaTime;
+                UpdateColor(stamina, maxStamina);
+            }
+            
+            yield return null;
         }
     }
 

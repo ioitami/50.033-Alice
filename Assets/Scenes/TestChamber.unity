@@ -664,6 +664,9 @@ MonoBehaviour:
   dashSpeed: 32
   dashCost: 1
   dashDuration: 0.13
+  glideSpeedMultiplier: 0.8
+  glideEquipCost: 0.5
+  glideStamPerSec: 0.2
   maxStamina: 2
   stamina: 2
   canMove: 1
