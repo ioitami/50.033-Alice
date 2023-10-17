@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = 4;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
+    public float dashEndMultiplierX = 0.3f;
+    public float dashEndMultiplierY = 0.1f;
+
 
     public Vector2 velocity;
     public float xRaw;
@@ -200,7 +203,7 @@ public class PlayerMovement : MonoBehaviour
 
             AddActingVelocity(dashDir * dashSpeed, 0);
 
-            StartCoroutine(NoGravity(dashDuration + 0.15f));
+            StartCoroutine(NoGravity(dashDuration + 0.17f));
             StartCoroutine(Dashing(dashDuration));
         }
     }
@@ -274,7 +277,7 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(time);
 
-        rigidBody.velocity = new Vector2(rigidBody.velocity.x * 0.1f, rigidBody.velocity.y * 0.1f);
+        rigidBody.velocity = new Vector2(rigidBody.velocity.x * dashEndMultiplierX, rigidBody.velocity.y * dashEndMultiplierY);
         isDashing = false;
         playerAnimator.SetBool("isDashing", false);
 
