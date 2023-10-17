@@ -343,8 +343,11 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateColor(float stamina, float maxStamina)
     {
-        Color updatedCol = new Color(1f, (stamina / maxStamina), (stamina / maxStamina));
-        this.GetComponent<SpriteRenderer>().color = updatedCol;
+        Sprite sprite = this.GetComponent<SpriteRenderer>().sprite;
+        //Color updatedCol = new Color(1f, (stamina / maxStamina), (stamina / maxStamina));
+        //this.GetComponent<SpriteRenderer>().color = updatedCol;
+
+
     }
 
     public void AddActingVelocity(Vector2 vel, int numFrames)
