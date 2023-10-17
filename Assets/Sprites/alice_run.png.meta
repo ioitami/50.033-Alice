@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e3164989f3fc3494fb9e2c3785bedf07
+guid: 89f42fdb9c92b7e4c982990452522178
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,13 +45,13 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 172
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 1
+  alphaUsage: 0
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -69,9 +69,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 256
     resizeAlgorithm: 1
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,10 +113,10 @@ TextureImporter:
       name: alice_run_0
       rect:
         serializedVersion: 2
-        x: 27
+        x: 3
         y: 0
-        width: 153
-        height: 207
+        width: 17
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16bbef2d820dea6418f1a32c7bca142f
-      internalID: -1057246921
+      spriteID: c9ba2e6aba629c6429a0283bbd808d39
+      internalID: -1248650578
       vertices: []
       indices: 
       edges: []
@@ -134,19 +134,19 @@ TextureImporter:
       name: alice_run_1
       rect:
         serializedVersion: 2
-        x: 189
+        x: 21
         y: 0
-        width: 180
-        height: 216
+        width: 20
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 27, y: 0, z: 9, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0ba01a0dd9fab74887fc14d9e5faf74
-      internalID: -1534382730
+      spriteID: bf4ab7acbff8d0b4d9376a780a542bb6
+      internalID: 490458485
       vertices: []
       indices: 
       edges: []
@@ -155,10 +155,10 @@ TextureImporter:
       name: alice_run_2
       rect:
         serializedVersion: 2
-        x: 405
+        x: 45
         y: 0
-        width: 153
-        height: 207
+        width: 17
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bd564601ed313144a7a44231fc2b5d0
-      internalID: -71512415
+      spriteID: cbebe2cbd3de3f54d952fc7dab8b34df
+      internalID: 1839168218
       vertices: []
       indices: 
       edges: []
@@ -176,19 +176,19 @@ TextureImporter:
       name: alice_run_3
       rect:
         serializedVersion: 2
-        x: 585
+        x: 65
         y: 0
-        width: 171
-        height: 216
+        width: 19
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 9, y: 0, z: 9, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62754f3d432714c4496edafa4eb6b5ea
-      internalID: -420215510
+      spriteID: 6e8fe5e045bb60646b7f2b3b48071f80
+      internalID: -1289114704
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      alice_run_0: -1057246921
-      alice_run_1: -1534382730
-      alice_run_2: -71512415
-      alice_run_3: -420215510
+      alice_run_0: -1248650578
+      alice_run_1: 490458485
+      alice_run_2: 1839168218
+      alice_run_3: -1289114704
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
