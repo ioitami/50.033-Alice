@@ -302,7 +302,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 1.2}
+    oldSize: {x: 0.82051283, y: 1.2307693}
     newSize: {x: 0.766497, y: 1.035}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -745,6 +745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 2056879164}
   playerMovement: {fileID: 28840402}
+  saveFile: {fileID: 11400000, guid: d73cc52a8a22d41709c03743387f412d, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -303,7 +303,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 1.2}
+    oldSize: {x: 0.82051283, y: 1.2307693}
     newSize: {x: 0.8, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -724,7 +724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 169563471}
   m_Layer: 0
-  m_Name: LeftSpawnPoint
+  m_Name: Rm2LeftSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1469,7 +1469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1221330953}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: Rm3SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,7 +1774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1862897195}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: Rm1SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1913,7 +1913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125589774}
   m_Layer: 0
-  m_Name: RightSpawnPoint
+  m_Name: Rm2RightSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
