@@ -313,7 +313,7 @@ public class PlayerMovement : MonoBehaviour
             faceRightState = false;
             playerSprite.flipX = true;
 
-            if (rigidBody.velocity.x > 0.1f)
+            if (rigidBody.velocity.x > 2f)
             {
                 playerAnimator.SetTrigger("isTurning");
             }
@@ -325,7 +325,7 @@ public class PlayerMovement : MonoBehaviour
             faceRightState = true;
             playerSprite.flipX = false;
 
-            if (rigidBody.velocity.x < -0.1f)
+            if (rigidBody.velocity.x < -2f)
             {
                 playerAnimator.SetTrigger("isTurning");
             }
@@ -343,11 +343,9 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateColor(float stamina, float maxStamina)
     {
-        Sprite sprite = this.GetComponent<SpriteRenderer>().sprite;
-        //Color updatedCol = new Color(1f, (stamina / maxStamina), (stamina / maxStamina));
-        //this.GetComponent<SpriteRenderer>().color = updatedCol;
-
-
+        //Sprite sprite = this.GetComponent<SpriteRenderer>().sprite;
+        Color updatedCol = new Color(1f, (stamina / maxStamina), (stamina / maxStamina));
+        this.GetComponent<SpriteRenderer>().color = updatedCol;
     }
 
     public void AddActingVelocity(Vector2 vel, int numFrames)
