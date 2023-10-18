@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public GameManager gameManager;
     public PlayerMovement playerMovement;
+    public SaveFile saveFile;
 
     void Awake()
     {
@@ -18,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Spawn(Vector2.zero);
     }
 
     // Update is called once per frame
@@ -37,5 +38,11 @@ public class PlayerManager : MonoBehaviour
     void ChangePlayerGravity(float gravityScale)
     {
         playerMovement.ChangePlayerGravity(gravityScale);
+    }
+
+    void Spawn(Vector2 speed)
+    {
+        Vector3 spawnPosition = GameObject.Find(saveFile.roomName + "/" + saveFile.spawnPoint).transform.position;
+        playerMovement.Teleport(speed,spawnPosition);
     }
 }

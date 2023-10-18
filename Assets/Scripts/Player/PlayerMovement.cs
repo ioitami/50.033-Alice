@@ -243,15 +243,27 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator GlidingStamDrain()
     {
         // Continue running until isGliding is set to false
+        float timeElapsed = 0;
+        bool timeToDrain = false;
         while (true)
         {
             if (isGliding)
             {
-                Debug.Log("Stamina Drained from Gliding!");
-                stamina -= glideStamPerSec * Time.deltaTime;
-                UpdateColor(stamina, maxStamina);
+                if (timeToDrain)
+                {
+                    Debug.Log("Stamina Drained from Gliding!");
+                    stamina -= glideStamPerSec * (timeElapsed + Time.deltaTime);
+
+                    timeElapsed = 0;
+                    timeToDrain = false;
+                    UpdateColor(stamina, maxStamina);
+                }
+                else
+                {
+                    timeElapsed += Time.deltaTime;
+                    timeToDrain = true;
+                }
             }
-            
             yield return null;
         }
     }
@@ -375,4 +387,16 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.gravityScale = gravityScale;
     }
 
+
+    public void Teleport(Vector2 vel, Vector3 dest)
+    {
+        velocity = Vector2.zero;
+
+        // TODO add some delay?
+
+        transform.position = dest;
+
+        // some stuff
+        velocity = vel;
+    }
 }
