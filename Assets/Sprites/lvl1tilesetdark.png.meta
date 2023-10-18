@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lvl1tilesetdark_topleft
+      name: lvl1tilesetdark_TL
       rect:
         serializedVersion: 2
         x: 0
-        y: 1440
-        width: 160
-        height: 160
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbc764b1af68b5e419b12c814c96f67c
-      internalID: 165473492
+      spriteID: eccc90a98fd70404c9371ce662481475
+      internalID: 953723012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_topmid
+      name: lvl1tilesetdark_TM
       rect:
         serializedVersion: 2
-        x: 160
-        y: 1440
-        width: 160
-        height: 160
+        x: 16
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60ebf2c362846d440a306345e4594cbf
-      internalID: -1906659450
+      spriteID: c02baea0aa605d84b9a2db9e43b41d01
+      internalID: 1012315989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_topright
+      name: lvl1tilesetdark_TR
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1440
-        width: 160
-        height: 160
+        x: 32
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb57c414e0a7f0640a071a441ff13be4
-      internalID: 1619233017
+      spriteID: 8d95878eb21ece9498ab797b4b35f913
+      internalID: 1076872722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_tallflower
+      name: lvl1tilesetdark_flower_1
       rect:
         serializedVersion: 2
-        x: 490
-        y: 1440
-        width: 50
-        height: 60
+        x: 49
+        y: 144
+        width: 5
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1ebe984129511d48ba1dab8427a560d
-      internalID: -1865380382
+      spriteID: af988ac5ce8f3f948aca594ffa99590f
+      internalID: -170665415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_smallrock
+      name: lvl1tilesetdark_flower_2
       rect:
         serializedVersion: 2
-        x: 660
-        y: 1440
-        width: 50
-        height: 20
+        x: 72
+        y: 144
+        width: 4
+        height: 2
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 481bc29af8daa2f49913c4dae1626743
-      internalID: 540642480
+      spriteID: e4170e2ef2e679b48ac50038a3e6591e
+      internalID: -719015181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_grass1
+      name: lvl1tilesetdark_grass_1
       rect:
         serializedVersion: 2
-        x: 770
-        y: 1440
-        width: 60
-        height: 60
+        x: 77
+        y: 144
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3845a01301b941498afeada5d4ff8c7
-      internalID: 647332042
+      spriteID: bdee585abdcfecb4aa749764d21f5e65
+      internalID: 1822490731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_grass3
+      name: lvl1tilesetdark_grass_3
       rect:
         serializedVersion: 2
-        x: 990
-        y: 1440
-        width: 80
-        height: 80
+        x: 99
+        y: 144
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf723d1198a372544b706bea78058cbb
-      internalID: -1830767227
+      spriteID: 9852d686fac7bcf468edfa0797ccb10d
+      internalID: -1587534083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_grass5
+      name: lvl1tilesetdark_grass_4
       rect:
         serializedVersion: 2
-        x: 1180
-        y: 1440
-        width: 50
-        height: 50
+        x: 110
+        y: 144
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d86b114674f6a78428c4a4abe7018676
-      internalID: 1161741818
+      spriteID: 74baf155103fe6a4188073f038c7145a
+      internalID: 1648622004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_grass6
+      name: lvl1tilesetdark_grass_6
       rect:
         serializedVersion: 2
-        x: 1250
-        y: 1440
-        width: 90
-        height: 50
+        x: 125
+        y: 144
+        width: 9
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,188 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7851db5c8e21ca2499cb697d20cc9f25
-      internalID: -1506511180
+      spriteID: 2564c9f8f7905b14fb2c772e7d3a6f00
+      internalID: 651278401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_left
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1280
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73d7592ea0ad8ec42b8e7bdb9f52aae3
-      internalID: 260194570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_mid
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 1280
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3645291406160ce4d8a112cd0e262ac4
-      internalID: 815235294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_right
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 1280
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbe9bc42eb3a3ae49be7b767bc6e4b45
-      internalID: 1133226716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_vinebig
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 1288
-        width: 250
-        height: 142
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0051277f97996b43ac98ed086edc5f4
-      internalID: 908049579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_vinesmall
-      rect:
-        serializedVersion: 2
-        x: 820
-        y: 1340
-        width: 130
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 339cb852d8bd1e64eb8ef308cfc32fc3
-      internalID: 658047104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_vinelong
-      rect:
-        serializedVersion: 2
-        x: 990
-        y: 1290
-        width: 70
-        height: 140
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1b74e9c08b129f4d8d22cabeb335190
-      internalID: -1840612411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_root1
-      rect:
-        serializedVersion: 2
-        x: 1150
-        y: 1310
-        width: 70
-        height: 110
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ab8782fdc575c749b26a7ea4a22ec97
-      internalID: 1771233897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_root2
-      rect:
-        serializedVersion: 2
-        x: 1300
-        y: 1310
-        width: 80
-        height: 120
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a39994e9519f8b044baa6232ee108e66
-      internalID: 2118217005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_bottomleft
+      name: lvl1tilesetdark_ML
       rect:
         serializedVersion: 2
         x: 0
-        y: 1120
-        width: 160
-        height: 160
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 825813b1b89ec0147a3210f0a357f2fe
-      internalID: 1771830714
+      spriteID: 6e83930abfb55924d9e1c0a580b8cbdb
+      internalID: -583360812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_bottom
+      name: lvl1tilesetdark_M
       rect:
         serializedVersion: 2
-        x: 160
-        y: 1120
-        width: 160
-        height: 160
+        x: 16
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c02c8d6e846b9654eb5ec2cdc2eeb30f
-      internalID: 48012830
+      spriteID: b028e2a2c1cdc0b48862a86fb74955dc
+      internalID: -722774776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_bottomright
+      name: lvl1tilesetdark_MR
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1120
-        width: 160
-        height: 160
+        x: 32
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e8eb1de4a80b5040ae36d15775a72db
-      internalID: -308686105
+      spriteID: b7fbf861f5ebd4942854c1273b4ca990
+      internalID: 897087945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_slopeshortL
+      name: lvl1tilesetdark_vine_1
       rect:
         serializedVersion: 2
-        x: 480
-        y: 960
-        width: 160
-        height: 320
+        x: 49
+        y: 132
+        width: 25
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -544,20 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 685c77e775b4f604e84c4a63609781b3
-      internalID: -1197089847
+      spriteID: 7ed31a8a0bdec664b96ebe4d4f2c653a
+      internalID: 1823561968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_slopeshortR
+      name: lvl1tilesetdark_vine_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 960
-        width: 160
-        height: 320
+        x: 82
+        y: 134
+        width: 13
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -565,20 +397,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 188f62a51191d2d4e9a3326b5111c690
-      internalID: 608585823
+      spriteID: 990a4ea8f744b3d4092633d5e11d56ef
+      internalID: -1019264284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_bottomleftfull
+      name: lvl1tilesetdark_vine_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 960
-        width: 160
-        height: 160
+        x: 99
+        y: 129
+        width: 6
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -586,20 +418,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94b31f2c46712b94f829abb9d882445e
-      internalID: 988519
+      spriteID: 10712ee887c9287459692d9d64fd5245
+      internalID: 737913682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_bottomrightfull
+      name: lvl1tilesetdark_root_1
       rect:
         serializedVersion: 2
-        x: 320
-        y: 960
-        width: 160
-        height: 160
+        x: 115
+        y: 131
+        width: 7
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -607,20 +439,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f19de1543729aff4e88b4cc367fc4fd3
-      internalID: 146914016
+      spriteID: 1c6dc21aaf6c2cd48a89087ee917e5e2
+      internalID: -1334634983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_grasscut
+      name: lvl1tilesetdark_root_2
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 960
-        width: 160
-        height: 160
+        x: 130
+        y: 131
+        width: 8
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,146 +460,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46214e5b4fdd6f74ea00a1dc188cc5ac
-      internalID: 640532215
+      spriteID: cefce620737cdbb45b4b74b770c8ca41
+      internalID: 529839669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_topsingle
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 800
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a05d75395709a4943b7bbfa386b1d5a4
-      internalID: -1069527504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_leftsingle
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 800
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bbec311cade0064494b0f315b7b60d3
-      internalID: -1210540923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_topmidsingle
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 800
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f22ad3be0627cc440a766e9c72668d39
-      internalID: -106112132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_rightsingle
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 800
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78bb75ebc29938841929237fe77ac402
-      internalID: 1620753452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_rockTLR
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 800
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d08695c269cb990438db2af09fcb587a
-      internalID: -1793458935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_grasscutsingle
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 800
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12ee3ffd26a1db24187ec782560bb0dc
-      internalID: -1895149185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_midsingle
+      name: lvl1tilesetdark_BL
       rect:
         serializedVersion: 2
         x: 0
-        y: 640
-        width: 160
-        height: 160
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -775,8 +481,323 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c41cb4c0881f36e48b57e3b8f46633f7
-      internalID: -2136808317
+      spriteID: c5cc14cde6d39d345a81cf249b1f4169
+      internalID: 2039248458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_BM
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93030b0eceb1c24f9044cc711eaaf71
+      internalID: 1875935871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_BR
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797d77a6801d9074c8b5a234bcdd9dce
+      internalID: -1731696124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_slopeL_short
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef491dbd48a26a41bbe47d00aa8ee85
+      internalID: -1909192546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_slopeR_short
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8957b073c183cc04aba45b2244e15b38
+      internalID: 870905682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_BL_full
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af196eee2df4344f8dc34f6c0c14159
+      internalID: -1180028356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_26
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eed60f813042504bbc24492295bc124
+      internalID: 789014263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_BR_full
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20408b87cf76cbf4b8a59167f4004620
+      internalID: 490311470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_empty_T
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2ca5435e844c94b9d63a722f2dffc4
+      internalID: -302758176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_single_T
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401ca1fe89ffa57478b81174df79aebe
+      internalID: -1840753790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_single_TL
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e01893e34e53d49a2ad1ff8025865b
+      internalID: 59475498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_single_TM
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6676c891f62564a8f7206fa1b2d017
+      internalID: -877131120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_single_TR
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631b3b6fd0521204a872022e7cbd78d2
+      internalID: -1330412994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_edge_TLR
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c748d378e1cec64d9067875b109c846
+      internalID: -1060235354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_empty_single
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226e021460ebf034ab849550b8ca056d
+      internalID: 1480327733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_single_M
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a178bb970a7cfd9439a4c0fa1265ce13
+      internalID: 1162587044
       vertices: []
       indices: 
       edges: []
@@ -785,10 +806,10 @@ TextureImporter:
       name: lvl1tilesetdark_single
       rect:
         serializedVersion: 2
-        x: 160
-        y: 640
-        width: 160
-        height: 160
+        x: 16
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -796,20 +817,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac175e9dfc1eff4fbb79dd6d33bb1e8
+      spriteID: 6f8129beee487bc46b86c2c72ee41a48
       internalID: 359423704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_innerTL
+      name: lvl1tilesetdark_corner_TL
       rect:
         serializedVersion: 2
-        x: 320
-        y: 640
-        width: 160
-        height: 160
+        x: 32
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -817,20 +838,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5f23a674f976b1438bfc515868291f5
-      internalID: -1441153961
+      spriteID: 84138ee1c9422dc43863bb2134f2f960
+      internalID: 567450936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_innerTR
+      name: lvl1tilesetdark_corner_TR
       rect:
         serializedVersion: 2
-        x: 480
-        y: 640
-        width: 160
-        height: 160
+        x: 48
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -838,20 +859,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4c424a51dfb7bb40aa68f264f655887
-      internalID: -1803880853
+      spriteID: bb84e167dcd39dc47ba51ff91ff11c60
+      internalID: -1142304152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockTLB
+      name: lvl1tilesetdark_edge_TLB
       rect:
         serializedVersion: 2
-        x: 640
-        y: 640
-        width: 160
-        height: 160
+        x: 64
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -859,20 +880,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f7570a6d2d74f4890373787aa23114
-      internalID: 57626490
+      spriteID: 12d8db03faa8bdd4897467921c287cac
+      internalID: 1592484315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockTLBR
+      name: lvl1tilesetdark_edge_all
       rect:
         serializedVersion: 2
-        x: 800
-        y: 640
-        width: 160
-        height: 160
+        x: 80
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -880,20 +901,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25a798411c2d11e4ca272edac07c6f00
-      internalID: 1636236395
+      spriteID: 10b53118fefb9a748b217c17cb2ad665
+      internalID: 1071619302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockTRB
+      name: lvl1tilesetdark_edge_TRB
       rect:
         serializedVersion: 2
-        x: 960
-        y: 640
-        width: 160
-        height: 160
+        x: 96
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -901,20 +922,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b290bd675069798469c1bbe477572d98
-      internalID: -1388466733
+      spriteID: 3bbf71bdd67a5934fb39cfcf197848fb
+      internalID: 54873784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_bottomsingle
+      name: lvl1tilesetdark_TM_alt
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ac51b67fd94e14eba0066549f6aeb8
+      internalID: -1121003753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_single_B
       rect:
         serializedVersion: 2
         x: 0
-        y: 480
-        width: 160
-        height: 160
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -922,20 +964,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8842e5f727dde53439fb8bc71242fb26
-      internalID: 543714028
+      spriteID: 6f1df7b995846b34f81aa63a8400ae0d
+      internalID: 1915131180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_bottomfullsingle
+      name: lvl1tilesetdark_single_B_full
       rect:
         serializedVersion: 2
-        x: 160
-        y: 480
-        width: 160
-        height: 160
+        x: 16
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -943,20 +985,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3980be8ae874d4479dd8b1c20cfa578
-      internalID: -1978971807
+      spriteID: ecdd48ed06b2efd4eb47129d27f5bc96
+      internalID: 801152594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_innerBL
+      name: lvl1tilesetdark_corner_BL
       rect:
         serializedVersion: 2
-        x: 320
-        y: 480
-        width: 160
-        height: 160
+        x: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -964,20 +1006,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bf4276f6ebae1744b17cfdcb360764a
-      internalID: -1456828263
+      spriteID: c6e414739c0a9394c9246934ec241ec0
+      internalID: 1250713095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_innerBR
+      name: lvl1tilesetdark_corner_BR
       rect:
         serializedVersion: 2
-        x: 480
-        y: 480
-        width: 160
-        height: 160
+        x: 48
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -985,20 +1027,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eef1d5abd06bc9a44b04db0475170da6
-      internalID: 866586040
+      spriteID: 061314879a8f8a7419691475cbee8010
+      internalID: -1061658392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_tockBLR
+      name: lvl1tilesetdark_edge_LBR
       rect:
         serializedVersion: 2
-        x: 800
-        y: 480
-        width: 160
-        height: 160
+        x: 80
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1006,20 +1048,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbcb6ef6a170aae43b5d20f195b98e78
-      internalID: -1839011533
+      spriteID: e1f146fe47d8b3447bff5e4cb61effc4
+      internalID: 443098418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockTL
+      name: lvl1tilesetdark_edge_TL
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 480
-        width: 160
-        height: 160
+        x: 112
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1027,20 +1069,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa753facd8e732b4fa094917b9fa30ab
-      internalID: -852270978
+      spriteID: 30fbcae3a410a164a88c3a2c3215da52
+      internalID: 2109109380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockTR
+      name: lvl1tilesetdark_edge_TR
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 480
-        width: 160
-        height: 160
+        x: 128
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1048,20 +1090,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17b976d33dd320e4190cd427c2fd4588
-      internalID: -1660180873
+      spriteID: 80d43a5d9c048c04483be3c72736c232
+      internalID: -709040153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_slopelongL
+      name: lvl1tilesetdark_slopeL_long
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 320
-        height: 320
+        y: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1069,20 +1111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa8ff432a978dfe4ba9cbf3b22f45969
-      internalID: 547423252
+      spriteID: c8db3049f028f5941a2e8f5df1364764
+      internalID: -1920840255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_slopelongR
+      name: lvl1tilesetdark_edge_LR
       rect:
         serializedVersion: 2
-        x: 320
-        y: 160
-        width: 320
-        height: 320
+        x: 64
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1090,29 +1132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a623659a0b26f6439aa873de1281f73
-      internalID: -121475256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lvl1tilesetdark_rockLR
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 320
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d0dca3d995f9fa41b00fca4e8ce9fcf
-      internalID: -305415518
+      spriteID: 8ef2e9b3538eda044a41d883b92243f9
+      internalID: 2121352386
       vertices: []
       indices: 
       edges: []
@@ -1121,10 +1142,10 @@ TextureImporter:
       name: lvl1tilesetdark_empty
       rect:
         serializedVersion: 2
-        x: 800
-        y: 320
-        width: 160
-        height: 160
+        x: 80
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1132,20 +1153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0297bde757bba5a478748af9382cd299
+      spriteID: e08f61515e2b9f74394dd62bd430a5c5
       internalID: -15233699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockBL
+      name: lvl1tilesetdark_edge_BL
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 320
-        width: 160
-        height: 160
+        x: 112
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1153,20 +1174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2683d6f8ff42dc45b727cd268d2614d
-      internalID: 1115282433
+      spriteID: c05761a37d5f4ce4883f5ca7edd960ee
+      internalID: -1312629691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockBR
+      name: lvl1tilesetdark_edge_BR
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 320
-        width: 160
-        height: 160
+        x: 128
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1174,20 +1195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5cbc594b3e298540aa8c259161b5f2d
-      internalID: 67021445
+      spriteID: 81140e6c8166b1e41862411e33dff6ae
+      internalID: 1171248926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockTB
+      name: lvl1tilesetdark_slopeR_long
       rect:
         serializedVersion: 2
-        x: 640
-        y: 160
-        width: 160
-        height: 160
+        x: 32
+        y: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1195,20 +1216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 471d8e04cd4b4984fa06680af5561c24
-      internalID: -1381998636
+      spriteID: b5b03762bfe4bb243b22560efe855df9
+      internalID: 2076936596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockT
+      name: lvl1tilesetdark_edge_TB
       rect:
         serializedVersion: 2
-        x: 960
-        y: 160
-        width: 160
-        height: 160
+        x: 64
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1216,20 +1237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb40cc36b48f9b647b1bbb295959a1e5
-      internalID: 952896947
+      spriteID: d4c27ffc329777746b1c875898bebdc2
+      internalID: 1666240365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockedgeBR
+      name: lvl1tilesetdark_edge_T
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 160
-        width: 160
-        height: 160
+        x: 96
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1237,20 +1258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b33997446c6b3c4b9719a0e6ecaff1b
-      internalID: -1752893826
+      spriteID: 754ceec7d40ac8142b3f08ee90009c56
+      internalID: 1831122213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockedgeBL
+      name: lvl1tilesetdark_innercorner_TL
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 160
-        width: 160
-        height: 160
+        x: 128
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1258,20 +1279,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a12968ce867399042978a81e85694083
-      internalID: 1916550072
+      spriteID: 97f3668382dd5be46899e3d2a251254f
+      internalID: -774961719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_bottomlongL
+      name: lvl1tilesetdark_innercorner_TR
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee87c2e65b70454b80aa835c489dbb3
+      internalID: -1032348101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lvl1tilesetdark_slopeL_bottom
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 160
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1279,20 +1321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ed8bfeaa915c3a4f9199f53b94bd61d
-      internalID: -944101400
+      spriteID: 86ff27bfbc72ab04892331c797402a3a
+      internalID: 387562570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_bottomslopeR
+      name: lvl1tilesetdark_slopeR_bottom
       rect:
         serializedVersion: 2
-        x: 320
+        x: 32
         y: 0
-        width: 320
-        height: 160
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1300,20 +1342,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d10442f25b55f8e42825ef739a3a5100
-      internalID: -19080593
+      spriteID: c26ff5d8352efe24fb3ec2ded36e90d1
+      internalID: 13415121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockL
+      name: lvl1tilesetdark_edge_L
       rect:
         serializedVersion: 2
-        x: 800
+        x: 80
         y: 0
-        width: 160
-        height: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1321,20 +1363,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed47b4cb3e45b704d91930e67379d1e8
-      internalID: 1006045563
+      spriteID: 363d7b74a382478458e2b01626c44356
+      internalID: 806134926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockB
+      name: lvl1tilesetdark_edge_B
       rect:
         serializedVersion: 2
-        x: 960
+        x: 96
         y: 0
-        width: 160
-        height: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1342,20 +1384,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0405a9ab24b143c42b7dc81c69f2dff2
-      internalID: -2135367906
+      spriteID: d62ed4e04edb8364ba891c8ae3474512
+      internalID: -637613692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockR
+      name: lvl1tilesetdark_edge_R
       rect:
         serializedVersion: 2
-        x: 1120
+        x: 112
         y: 0
-        width: 160
-        height: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1363,20 +1405,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87556df62a49fc94487e20023c98287f
-      internalID: 987809981
+      spriteID: b7d9076e7a3c4af4b922d07d0fda390b
+      internalID: -1408858569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockedgeTR
+      name: lvl1tilesetdark_innercorner_BL
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 128
         y: 0
-        width: 160
-        height: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1384,20 +1426,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55a1c566cadd15b4e9ab4002baa11076
-      internalID: -5800016
+      spriteID: 35151a39d3afcb74c9e1fda70f11a006
+      internalID: 1317743094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_rockedgeTL
+      name: lvl1tilesetdark_innercorner_BR
       rect:
         serializedVersion: 2
-        x: 1440
+        x: 144
         y: 0
-        width: 160
-        height: 160
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1405,92 +1447,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b94d81681be2084c8c002f04f611a00
-      internalID: 1752180494
+      spriteID: c56b45aa2fd85924488034ba8f3ddb1f
+      internalID: 61675426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_bigrock
+      name: lvl1tilesetdark_rock_1
       rect:
         serializedVersion: 2
-        x: 540
-        y: 1440
-        width: 100
-        height: 40
+        x: 54
+        y: 144
+        width: 10
+        height: 4
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66c0838530392b543b26d534e193e881
-      internalID: -1841583060
+      spriteID: 024dc3dc9c0e11b42b72e18968a18922
+      internalID: -759973571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_smallflower
+      name: lvl1tilesetdark_rock_2
       rect:
         serializedVersion: 2
-        x: 720
-        y: 1440
-        width: 40
-        height: 20
+        x: 66
+        y: 144
+        width: 5
+        height: 2
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 451a4db9631451841bfce7a2b6e082fd
-      internalID: 956382676
+      spriteID: 4a60fc3cea8def449952d858dcc04299
+      internalID: -428871582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_grass2
+      name: lvl1tilesetdark_grass_2
       rect:
         serializedVersion: 2
-        x: 860
-        y: 1440
-        width: 60
-        height: 70
+        x: 86
+        y: 144
+        width: 6
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac78740c03ed1e4eb5e1019cded62ce
-      internalID: 854736549
+      spriteID: ce971f34db8a72947988dc8981b232a5
+      internalID: 1429568138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvl1tilesetdark_grass4
+      name: lvl1tilesetdark_grass_5
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 1440
-        width: 60
-        height: 60
+        x: 118
+        y: 144
+        width: 5
+        height: 5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ea28197fbcacc1408f5a0f276b735a1
-      internalID: -1120734817
+      spriteID: f8c63181df83c3c40a3fcc35b009791a
+      internalID: 405431749
       vertices: []
       indices: 
       edges: []
@@ -1506,84 +1548,89 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lvl1tileset_13: 1005156446
-      lvl1tileset_24: 896190549
-      lvl1tileset_26: 872695802
-      lvl1tileset_27: -1425758478
-      lvl1tileset_50: -1098541699
-      lvl1tileset_52: 464476217
-      lvl1tileset_57: -1676877166
-      lvl1tileset_58: 1914830594
-      lvl1tileset_59: -255348951
-      lvl1tileset_60: -997573332
-      lvl1tileset_66: -569578434
-      lvl1tileset_68: 247825365
-      lvl1tilesetdark_bigrock: -1841583060
-      lvl1tilesetdark_bottom: 48012830
-      lvl1tilesetdark_bottomfullsingle: -1978971807
-      lvl1tilesetdark_bottomleft: 1771830714
-      lvl1tilesetdark_bottomleftfull: 988519
-      lvl1tilesetdark_bottomlongL: -944101400
-      lvl1tilesetdark_bottomright: -308686105
-      lvl1tilesetdark_bottomrightfull: 146914016
-      lvl1tilesetdark_bottomsingle: 543714028
-      lvl1tilesetdark_bottomslopeR: -19080593
+      lvl1tilesetdark_13: 1556011504
+      lvl1tilesetdark_23: -445820102
+      lvl1tilesetdark_24: 1197997022
+      lvl1tilesetdark_26: 789014263
+      lvl1tilesetdark_28: 943943012
+      lvl1tilesetdark_29: 551035931
+      lvl1tilesetdark_45: 1687886712
+      lvl1tilesetdark_46: 1250713095
+      lvl1tilesetdark_55: -1157023224
+      lvl1tilesetdark_56: 1053973655
+      lvl1tilesetdark_57: 2121352386
+      lvl1tilesetdark_62: 2070956116
+      lvl1tilesetdark_63: 288278827
+      lvl1tilesetdark_65: 1666240365
+      lvl1tilesetdark_71: 42508481
+      lvl1tilesetdark_73: 806134926
+      lvl1tilesetdark_BL: 1875935871
+      lvl1tilesetdark_BL_full: 490311470
+      lvl1tilesetdark_BM: -1731696124
+      lvl1tilesetdark_BR: -1180028356
+      lvl1tilesetdark_BR_full: -1909192546
+      lvl1tilesetdark_M: 897087945
+      lvl1tilesetdark_ML: -722774776
+      lvl1tilesetdark_MR: 2039248458
+      lvl1tilesetdark_TL: 1012315989
+      lvl1tilesetdark_TM: 1076872722
+      lvl1tilesetdark_TM_alt: -1121003753
+      lvl1tilesetdark_TR: -583360812
+      lvl1tilesetdark_corner_BL: 1250713095
+      lvl1tilesetdark_corner_BR: -1061658392
+      lvl1tilesetdark_corner_TL: -1142304152
+      lvl1tilesetdark_corner_TR: -1142304152
+      lvl1tilesetdark_edge_B: -637613692
+      lvl1tilesetdark_edge_BL: -1312629691
+      lvl1tilesetdark_edge_BR: 1171248926
+      lvl1tilesetdark_edge_L: 806134926
+      lvl1tilesetdark_edge_LBR: 443098418
+      lvl1tilesetdark_edge_LR: 2121352386
+      lvl1tilesetdark_edge_R: -1408858569
+      lvl1tilesetdark_edge_T: 1831122213
+      lvl1tilesetdark_edge_TB: 1666240365
+      lvl1tilesetdark_edge_TL: 2109109380
+      lvl1tilesetdark_edge_TLB: 1592484315
+      lvl1tilesetdark_edge_TLR: -1060235354
+      lvl1tilesetdark_edge_TR: -709040153
+      lvl1tilesetdark_edge_TRB: 54873784
+      lvl1tilesetdark_edge_all: 1071619302
       lvl1tilesetdark_empty: -15233699
-      lvl1tilesetdark_grass1: 647332042
-      lvl1tilesetdark_grass2: 854736549
-      lvl1tilesetdark_grass3: -1830767227
-      lvl1tilesetdark_grass4: -1120734817
-      lvl1tilesetdark_grass5: 1161741818
-      lvl1tilesetdark_grass6: -1506511180
-      lvl1tilesetdark_grasscut: 640532215
-      lvl1tilesetdark_grasscutsingle: -1895149185
-      lvl1tilesetdark_innerBL: -1456828263
-      lvl1tilesetdark_innerBR: 866586040
-      lvl1tilesetdark_innerTL: -1441153961
-      lvl1tilesetdark_innerTR: -1803880853
-      lvl1tilesetdark_left: 260194570
-      lvl1tilesetdark_leftsingle: -1210540923
-      lvl1tilesetdark_mid: 815235294
-      lvl1tilesetdark_midsingle: -2136808317
-      lvl1tilesetdark_right: 1133226716
-      lvl1tilesetdark_rightsingle: 1620753452
-      lvl1tilesetdark_rockB: -2135367906
-      lvl1tilesetdark_rockBL: 1115282433
-      lvl1tilesetdark_rockBR: 67021445
-      lvl1tilesetdark_rockL: 1006045563
-      lvl1tilesetdark_rockLR: -305415518
-      lvl1tilesetdark_rockR: 987809981
-      lvl1tilesetdark_rockT: 952896947
-      lvl1tilesetdark_rockTB: -1381998636
-      lvl1tilesetdark_rockTL: -852270978
-      lvl1tilesetdark_rockTLB: 57626490
-      lvl1tilesetdark_rockTLBR: 1636236395
-      lvl1tilesetdark_rockTLR: -1793458935
-      lvl1tilesetdark_rockTR: -1660180873
-      lvl1tilesetdark_rockTRB: -1388466733
-      lvl1tilesetdark_rockedgeBL: 1916550072
-      lvl1tilesetdark_rockedgeBR: -1752893826
-      lvl1tilesetdark_rockedgeTL: 1752180494
-      lvl1tilesetdark_rockedgeTR: -5800016
-      lvl1tilesetdark_root1: 1771233897
-      lvl1tilesetdark_root2: 2118217005
-      lvl1tilesetdark_single: 359423704
-      lvl1tilesetdark_slopelongL: 547423252
-      lvl1tilesetdark_slopelongR: -121475256
-      lvl1tilesetdark_slopeshortL: -1197089847
-      lvl1tilesetdark_slopeshortR: 608585823
-      lvl1tilesetdark_smallflower: 956382676
-      lvl1tilesetdark_smallrock: 540642480
-      lvl1tilesetdark_tallflower: -1865380382
-      lvl1tilesetdark_tockBLR: -1839011533
-      lvl1tilesetdark_topleft: 165473492
-      lvl1tilesetdark_topmid: -1906659450
-      lvl1tilesetdark_topmidsingle: -106112132
-      lvl1tilesetdark_topright: 1619233017
-      lvl1tilesetdark_topsingle: -1069527504
-      lvl1tilesetdark_vinebig: 908049579
-      lvl1tilesetdark_vinelong: -1840612411
-      lvl1tilesetdark_vinesmall: 658047104
+      lvl1tilesetdark_empty_T: -302758176
+      lvl1tilesetdark_empty_single: 1480327733
+      lvl1tilesetdark_flower_1: -170665415
+      lvl1tilesetdark_flower_2: -719015181
+      lvl1tilesetdark_grass_1: 1822490731
+      lvl1tilesetdark_grass_2: 1429568138
+      lvl1tilesetdark_grass_3: -1587534083
+      lvl1tilesetdark_grass_4: 1648622004
+      lvl1tilesetdark_grass_5: 405431749
+      lvl1tilesetdark_grass_6: 651278401
+      lvl1tilesetdark_innercorner_BL: 1317743094
+      lvl1tilesetdark_innercorner_BR: 61675426
+      lvl1tilesetdark_innercorner_TL: -774961719
+      lvl1tilesetdark_innercorner_TR: -1032348101
+      lvl1tilesetdark_rock_1: -759973571
+      lvl1tilesetdark_rock_2: -428871582
+      lvl1tilesetdark_root_1: -1334634983
+      lvl1tilesetdark_root_2: 529839669
+      lvl1tilesetdark_single: 1162587044
+      lvl1tilesetdark_single_B: 801152594
+      lvl1tilesetdark_single_B_full: 59475498
+      lvl1tilesetdark_single_M: 1915131180
+      lvl1tilesetdark_single_T: 359423704
+      lvl1tilesetdark_single_TL: -877131120
+      lvl1tilesetdark_single_TM: -1330412994
+      lvl1tilesetdark_single_TR: 567450936
+      lvl1tilesetdark_slopeL_bottom: 13415121
+      lvl1tilesetdark_slopeL_long: 2076936596
+      lvl1tilesetdark_slopeL_short: 870905682
+      lvl1tilesetdark_slopeR_bottom: -1840753790
+      lvl1tilesetdark_slopeR_long: 387562570
+      lvl1tilesetdark_slopeR_short: -1920840255
+      lvl1tilesetdark_vine_1: 1823561968
+      lvl1tilesetdark_vine_2: -1019264284
+      lvl1tilesetdark_vine_3: 737913682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

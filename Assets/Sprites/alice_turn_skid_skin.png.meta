@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a1ee2e72382daa4ba2fe83025eda5bc
+guid: b086ebd63edf7474eb38025dc41b55c5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alice_glide_skin_0
+      name: alice_turn_skin_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 22
-        height: 36
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9d6383819564134da2eebdea17f7392
-      internalID: -929005864
+      spriteID: 8b81235a0b089594e81665cc159e0028
+      internalID: 1372461279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_glide_skin_1
+      name: alice_turn_skin_1
       rect:
         serializedVersion: 2
-        x: 23
+        x: 18
         y: 0
-        width: 22
-        height: 36
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c684109c691cee459740d6284e45fd1
-      internalID: -1417366307
+      spriteID: d3bce64dc452c234c917b14722be7180
+      internalID: -1155575861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_glide_skin_2
+      name: alice_skid_skin_0
       rect:
         serializedVersion: 2
-        x: 47
+        x: 36
         y: 0
-        width: 21
-        height: 36
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,29 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45d94fa2256bc21458d6f94b372c8bf1
-      internalID: 1170365484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: alice_glide_skin_3
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 0
-        width: 22
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f6665dd5a4cb944ca9c30ccb6c4651e
-      internalID: 684754775
+      spriteID: 28788bce8c5dcb7479e6bb8d64865972
+      internalID: 1769351007
       vertices: []
       indices: 
       edges: []
@@ -204,10 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      alice_glide_skin_0: -929005864
-      alice_glide_skin_1: -1417366307
-      alice_glide_skin_2: 1170365484
-      alice_glide_skin_3: 684754775
+      alice_skid_skin_0: 1769351007
+      alice_turn_skin_0: 1372461279
+      alice_turn_skin_1: -1155575861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

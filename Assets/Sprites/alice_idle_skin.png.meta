@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alice_idle_0
+      name: alice_idle_skin_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_idle_1
+      name: alice_idle_skin_1
       rect:
         serializedVersion: 2
         x: 16
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_idle_2
+      name: alice_idle_skin_2
       rect:
         serializedVersion: 2
         x: 32
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      alice_idle_0: 1406850706
-      alice_idle_1: 1749249312
-      alice_idle_2: -1106522995
+      alice_idle_skin_0: 1406850706
+      alice_idle_skin_1: 1749249312
+      alice_idle_skin_2: -1106522995
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

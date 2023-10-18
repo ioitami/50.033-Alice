@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alice_run_0
+      name: alice_run_skin_0
       rect:
         serializedVersion: 2
         x: 3
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_run_1
+      name: alice_run_skin_1
       rect:
         serializedVersion: 2
         x: 21
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_run_2
+      name: alice_run_skin_2
       rect:
         serializedVersion: 2
         x: 45
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_run_3
+      name: alice_run_skin_3
       rect:
         serializedVersion: 2
         x: 65
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      alice_run_0: -1248650578
-      alice_run_1: 490458485
-      alice_run_2: 1839168218
-      alice_run_3: -1289114704
+      alice_run_skin_0: -1248650578
+      alice_run_skin_1: 490458485
+      alice_run_skin_2: 1839168218
+      alice_run_skin_3: -1289114704
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

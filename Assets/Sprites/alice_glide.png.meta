@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a1ee2e72382daa4ba2fe83025eda5bc
+guid: afbf8e630aa5e6c40b35c88edff4fefc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alice_glide_skin_0
+      name: alice_glide_0
       rect:
         serializedVersion: 2
         x: 1
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_glide_skin_1
+      name: alice_glide_1
       rect:
         serializedVersion: 2
         x: 23
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_glide_skin_2
+      name: alice_glide_2
       rect:
         serializedVersion: 2
         x: 47
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: alice_glide_skin_3
+      name: alice_glide_3
       rect:
         serializedVersion: 2
         x: 69
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      alice_glide_skin_0: -929005864
-      alice_glide_skin_1: -1417366307
-      alice_glide_skin_2: 1170365484
-      alice_glide_skin_3: 684754775
+      alice_glide_0: -929005864
+      alice_glide_1: -1417366307
+      alice_glide_2: 1170365484
+      alice_glide_3: 684754775
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
