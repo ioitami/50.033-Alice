@@ -15,23 +15,32 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     public float speed = 10;
+    public float acceleration = 5f;
+    public float decceleration = 5f;
+    public float velocityPower = 0.9f;
+    public float friction = 2f;
+    [Space]
     public float jumpForce = 50;
     public float gravity = 4;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    public float dashEndMultiplierX = 0.3f;
-    public float dashEndMultiplierY = 0.1f;
-
-
+    [Space]
     public Vector2 velocity;
     public float xRaw;
     public float yRaw;
+
+    private float LastOnGroundTime = 0;
+    private float lastJumpTime = 0;
 
     [Space]
     [Header("Dash")]
     public float dashSpeed = 20;
     public float dashCost = 1;
     public float dashDuration = 0.3f;
+    public float dashEndMultiplierX = 0.3f;
+    public float dashEndMultiplierY = 0.1f;
+
+    public float lastDashTime = 0;
 
     [Space]
     [Header("Glide")]
@@ -74,6 +83,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check when players were last standing on ground
+        LastOnGroundTime -= Time.deltaTime;
+
+        if (isDashing)
+        {
+            lastDashTime += Time.deltaTime;
+        }
+
         // Get keyboard arrow key presses (up/down/left/right)
         xRaw = Input.GetAxisRaw("Horizontal");
         yRaw = Input.GetAxisRaw("Vertical");
@@ -87,6 +104,15 @@ public class PlayerMovement : MonoBehaviour
         if (moving == true && canMove == true)
         {
             Move(faceRightState == true ? 1 : -1);
+        }
+
+        // Friction if player stops inputting left/right and is on ground
+        if (collisionDetect.onGround == true && xRaw == 0)
+        {
+            // Use the min of current vel or friction amount, then add that force to player
+            float velocityAmt = Mathf.Min(Mathf.Abs(rigidBody.velocity.x), Mathf.Abs(friction));
+            velocityAmt *= Mathf.Sign(rigidBody.velocity.x);
+            rigidBody.AddForce(Vector2.right * -velocityAmt, ForceMode2D.Impulse);
         }
 
         // For animator
@@ -147,11 +173,29 @@ public class PlayerMovement : MonoBehaviour
        //Vector2 movement = new Vector2(value, 0);
        if(isGliding == false)
         {
-            rigidBody.velocity = new Vector2(value * speed, rigidBody.velocity.y);
+            // https://www.youtube.com/watch?v=KbtcEVCM7bw&t=324s reference
+
+            float targetSpeed = value * speed;
+            // diff between current velocity and max speed (target speed)
+            float speedDifference = targetSpeed - rigidBody.velocity.x;
+            // change acceleration based on if player is moving right or left
+            float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : decceleration;
+
+            float movement = Mathf.Pow(Mathf.Abs(speedDifference) * accelRate, velocityPower) * Mathf.Sign(speedDifference);
+
+            rigidBody.AddForce(movement * Vector2.right);
         }
         else
         {
-            rigidBody.velocity = new Vector2(value * speed * glideSpeedMultiplier, rigidBody.velocity.y);
+            float targetSpeed = value * speed * glideSpeedMultiplier;
+            // diff between current velocity and max speed (target speed)
+            float speedDifference = targetSpeed - rigidBody.velocity.x;
+            // change acceleration based on if player is moving right or left
+            float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration * 0.5f : decceleration * 0.5f;
+
+            float movement = Mathf.Pow(Mathf.Abs(speedDifference) * accelRate, velocityPower) * Mathf.Sign(speedDifference);
+
+            rigidBody.AddForce(movement * Vector2.right);
         }
     }
 
@@ -210,17 +254,26 @@ public class PlayerMovement : MonoBehaviour
 
     public void Glide()
     {
-        if(stamina > 0 && isGliding == false && isDashing == false && canMove == true && 
-            collisionDetect.cannotGlide == false && collisionDetect.onGround == false)
+        float dur = dashDuration - lastDashTime;
+        Debug.Log("dur: " + dur);
+        float dashbuffer = 0.15f;
+
+        //if (stamina > 0 && dur < dashbuffer && isGliding == false && isDashing == true)
+        //{
+        //    Debug.Log("BUFFERED GLIDER");
+        //    StartCoroutine(WaitToGlide(dur));
+        //}
+        if(stamina > 0 && isGliding == false && isDashing == false 
+            && canMove == true && collisionDetect.cannotGlide == false)
         {
             Debug.Log("EQUIP GLIDER");
 
             stamina -= glideEquipCost;
 
             isGliding = true;
-            playerAnimator.SetBool("isGliding", true);
-            ReplaceActingVelocity(Vector2.zero);
             ChangePlayerGravity(0.5f);
+
+            playerAnimator.SetBool("isGliding", true);
         }
         else if (isGliding == true && isDashing == false && canMove == true && 
             collisionDetect.onGround == false)
@@ -228,8 +281,9 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("UNEQUIP GLIDER");
 
             isGliding = false;
-            playerAnimator.SetBool("isGliding", false);
             ChangePlayerGravity(gravity);
+
+            playerAnimator.SetBool("isGliding", false);
         }
 
         if(stamina <= 0)
@@ -238,6 +292,12 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("isGliding", false);
             ChangePlayerGravity(gravity);
         }
+    }
+
+    IEnumerator WaitToGlide(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Glide();
     }
 
     IEnumerator GlidingStamDrain()
@@ -251,7 +311,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (timeToDrain)
                 {
-                    Debug.Log("Stamina Drained from Gliding!");
+                    // Debug.Log("Stamina Drained from Gliding!");
                     stamina -= glideStamPerSec * (timeElapsed + Time.deltaTime);
 
                     timeElapsed = 0;
@@ -285,13 +345,17 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dashing(float time)
     {
         isDashing = true;
+        isGliding = false;
         playerAnimator.SetBool("isDashing", true);
+        playerAnimator.SetBool("isGliding", false);
 
         yield return new WaitForSeconds(time);
 
         rigidBody.velocity = new Vector2(rigidBody.velocity.x * dashEndMultiplierX, rigidBody.velocity.y * dashEndMultiplierY);
         isDashing = false;
         playerAnimator.SetBool("isDashing", false);
+
+        lastDashTime = 0f;
 
         // Stamina stays at max if still on ground after dashing
         if (collisionDetect.onGround == true)

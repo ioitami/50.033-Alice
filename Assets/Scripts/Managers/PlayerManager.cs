@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Spawn(Vector2.zero);
+        //Spawn(Vector2.zero);
     }
 
     // Update is called once per frame

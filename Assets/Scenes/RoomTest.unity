@@ -325,7 +325,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.5
+  m_LinearDrag: 3
   m_AngularDrag: 0
   m_GravityScale: 4
   m_Material: {fileID: 0}
@@ -654,19 +654,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fae1b89ca0fbd142b2cf31337677293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 15
+  acceleration: 15
+  decceleration: 15
+  velocityPower: 0.9
+  friction: 0.3
   jumpForce: 16
   gravity: 4
   fallMultiplier: 2
   lowJumpMultiplier: 8
-  dashEndMultiplierX: 0.3
-  dashEndMultiplierY: 0.1
   velocity: {x: 0, y: 0}
   xRaw: 0
   yRaw: 0
   dashSpeed: 32
   dashCost: 1
   dashDuration: 0.13
+  dashEndMultiplierX: 0.3
+  dashEndMultiplierY: 0.1
   glideSpeedMultiplier: 0.8
   glideEquipCost: 0.5
   glideStamPerSec: 0.2
