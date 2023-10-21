@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     public float speed = 10;
+    //public Vector2 speedCap;
     public float acceleration = 5f;
     public float decceleration = 5f;
     public float velocityPower = 0.9f;
@@ -29,8 +30,6 @@ public class PlayerMovement : MonoBehaviour
     public float xRaw;
     public float yRaw;
 
-    private float LastOnGroundTime = 0;
-    private float lastJumpTime = 0;
 
     [Space]
     [Header("Dash")]
@@ -40,10 +39,9 @@ public class PlayerMovement : MonoBehaviour
     public float dashEndMultiplierX = 0.3f;
     public float dashEndMultiplierY = 0.1f;
 
-    public float lastDashTime = 0;
-
     [Space]
     [Header("Glide")]
+    public float glideGravity = 0.5f;
     public float glideSpeedMultiplier = 0.8f;
     public float glideEquipCost = 0.5f;
     public float glideStamPerSec = 0.25f;
@@ -83,14 +81,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check when players were last standing on ground
-        LastOnGroundTime -= Time.deltaTime;
-
-        if (isDashing)
-        {
-            lastDashTime += Time.deltaTime;
-        }
-
         // Get keyboard arrow key presses (up/down/left/right)
         xRaw = Input.GetAxisRaw("Horizontal");
         yRaw = Input.GetAxisRaw("Vertical");
@@ -142,6 +132,18 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidBody.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
+
+        // Make sure velocity doesnt go beyond speed cap
+        //if (Mathf.Abs(rigidBody.velocity.x) > speedCap.x)
+        //{
+        //    rigidBody.velocity = (rigidBody.velocity.x > 0) ? new Vector2(speedCap.x, rigidBody.velocity.y) :
+        //                                                      new Vector2(-speedCap.x, rigidBody.velocity.y);
+        //}
+        //if (Mathf.Abs(rigidBody.velocity.y) > speedCap.y)
+        //{
+        //    rigidBody.velocity = (rigidBody.velocity.y > 0) ? new Vector2(rigidBody.velocity.x, speedCap.y) :
+        //                                                      new Vector2(rigidBody.velocity.y, -speedCap.y);
+        //}
 
         // DEBUGGING PURPOSES IN THE INSPECTOR TO SHOW VELOCITY OF CHARACTER IN EACH FRAME
         velocity = rigidBody.velocity;
@@ -254,29 +256,21 @@ public class PlayerMovement : MonoBehaviour
 
     public void Glide()
     {
-        float dur = dashDuration - lastDashTime;
-        Debug.Log("dur: " + dur);
-        float dashbuffer = 0.15f;
 
-        //if (stamina > 0 && dur < dashbuffer && isGliding == false && isDashing == true)
-        //{
-        //    Debug.Log("BUFFERED GLIDER");
-        //    StartCoroutine(WaitToGlide(dur));
-        //}
-        if(stamina > 0 && isGliding == false && isDashing == false 
-            && canMove == true && collisionDetect.cannotGlide == false)
+        if(stamina > 0 && isGliding == false && collisionDetect.cannotGlide == false)
         {
             Debug.Log("EQUIP GLIDER");
 
             stamina -= glideEquipCost;
 
+            ReplaceActingVelocity(new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * glideGravity));
+
             isGliding = true;
-            ChangePlayerGravity(0.5f);
+            ChangePlayerGravity(glideGravity);
 
             playerAnimator.SetBool("isGliding", true);
         }
-        else if (isGliding == true && isDashing == false && canMove == true && 
-            collisionDetect.onGround == false)
+        else if (isGliding == true && collisionDetect.onGround == false)
         {
             Debug.Log("UNEQUIP GLIDER");
 
@@ -330,9 +324,12 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        // If player lands on Ground (Layer 3), recharges stamina
-        if (col.gameObject.layer == 3)
+        ContactPoint2D contact = col.contacts[0];
+
+        // If player lands on Ground (Layer 3) AND collides from above, recharges stamina
+        if (Vector2.Dot(contact.normal, Vector2.up) > 0.5 && col.gameObject.layer == 3 && collisionDetect.onGround == true)
         {
+            Debug.Log("Landed. Stamina Recharged.");
             isGliding = false;
             playerAnimator.SetBool("isGliding", false);
             ChangePlayerGravity(gravity);
@@ -354,8 +351,6 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.velocity = new Vector2(rigidBody.velocity.x * dashEndMultiplierX, rigidBody.velocity.y * dashEndMultiplierY);
         isDashing = false;
         playerAnimator.SetBool("isDashing", false);
-
-        lastDashTime = 0f;
 
         // Stamina stays at max if still on ground after dashing
         if (collisionDetect.onGround == true)
@@ -379,7 +374,16 @@ public class PlayerMovement : MonoBehaviour
     {
         ChangePlayerGravity(0);
         yield return new WaitForSeconds(time);
-        ChangePlayerGravity(gravity);
+
+        // Checks if player starts gliding before e.g dash ends
+        if (isGliding)
+        {
+            ChangePlayerGravity(glideGravity);
+        }
+        else
+        {
+            ChangePlayerGravity(gravity);
+        }
     }
 
     void FlipSprite(int value)
