@@ -6,12 +6,11 @@ using UnityEngine.InputSystem;
 
 public class ActionManager : MonoBehaviour
 {
-    public UnityEvent jump;
-    public UnityEvent jumpHold;
-    public UnityEvent jumpRelease;
     public UnityEvent<int> moveCheck;
     public UnityEvent dash;
-    public UnityEvent glide;
+    public UnityEvent jumpGlide;
+    public UnityEvent jumpHold;
+    public UnityEvent jumpRelease;
 
     // Start is called before the first frame update
     void Start()
@@ -34,24 +33,6 @@ public class ActionManager : MonoBehaviour
         }
     }
 
-    public void OnJumpAction(InputAction.CallbackContext context){
-        if (context.performed)
-        {
-            jump.Invoke();
-            jumpHold.Invoke();
-            Debug.Log("Jump was performed");     
-        }
-        if (context.performed)
-        {
-
-        }
-        if (context.canceled)
-        {
-            jumpRelease.Invoke();
-            Debug.Log("Jump released");
-        }
-    }
-
     public void OnDashAction(InputAction.CallbackContext context){
         if (context.performed)
         {
@@ -60,11 +41,19 @@ public class ActionManager : MonoBehaviour
         }
     }
 
-    public void OnGlideAction(InputAction.CallbackContext context){
+    public void OnJumpGlideAction(InputAction.CallbackContext context){
         if (context.started)
         {
-            glide.Invoke();
+            jumpGlide.Invoke();
             //Debug.Log("Glide was performed");
+        }
+        if (context.performed)
+        {
+            jumpHold.Invoke();
+        }
+        if (context.canceled)
+        {
+            jumpRelease.Invoke();
         }
     }
 }

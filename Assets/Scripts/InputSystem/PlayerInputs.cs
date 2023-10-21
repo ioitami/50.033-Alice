@@ -37,24 +37,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""c5aabff3-e096-48e6-9fd1-c2952f294521"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""jumphold"",
-                    ""type"": ""Button"",
-                    ""id"": ""12362d7c-eaa3-4a37-a32d-ffad98eec409"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Hold(duration=0.2,pressPoint=1.401298E-45)"",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""dash"",
                     ""type"": ""Button"",
                     ""id"": ""630659c4-ea03-49bc-b62f-898550e331e7"",
@@ -64,7 +46,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""glide"",
+                    ""name"": ""jumpglide"",
                     ""type"": ""Button"",
                     ""id"": ""1f8f2fec-e58c-4836-abe1-415d6335f965"",
                     ""expectedControlType"": ""Button"",
@@ -142,17 +124,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""748d774e-da3d-42ad-aba3-46ddf39bf7d2"",
-                    ""path"": ""<Keyboard>/c"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""d56a91f4-2af5-4700-8f0f-fae31ddc3329"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": ""Tap"",
@@ -169,18 +140,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""glide"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1b5963ed-ae04-4a57-8512-053f6b69709e"",
-                    ""path"": ""<Keyboard>/c"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""jumphold"",
+                    ""action"": ""jumpglide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -204,10 +164,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // PlayerFull
         m_PlayerFull = asset.FindActionMap("PlayerFull", throwIfNotFound: true);
         m_PlayerFull_move = m_PlayerFull.FindAction("move", throwIfNotFound: true);
-        m_PlayerFull_jump = m_PlayerFull.FindAction("jump", throwIfNotFound: true);
-        m_PlayerFull_jumphold = m_PlayerFull.FindAction("jumphold", throwIfNotFound: true);
         m_PlayerFull_dash = m_PlayerFull.FindAction("dash", throwIfNotFound: true);
-        m_PlayerFull_glide = m_PlayerFull.FindAction("glide", throwIfNotFound: true);
+        m_PlayerFull_jumpglide = m_PlayerFull.FindAction("jumpglide", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -270,19 +228,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerFull;
     private List<IPlayerFullActions> m_PlayerFullActionsCallbackInterfaces = new List<IPlayerFullActions>();
     private readonly InputAction m_PlayerFull_move;
-    private readonly InputAction m_PlayerFull_jump;
-    private readonly InputAction m_PlayerFull_jumphold;
     private readonly InputAction m_PlayerFull_dash;
-    private readonly InputAction m_PlayerFull_glide;
+    private readonly InputAction m_PlayerFull_jumpglide;
     public struct PlayerFullActions
     {
         private @PlayerInputs m_Wrapper;
         public PlayerFullActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @move => m_Wrapper.m_PlayerFull_move;
-        public InputAction @jump => m_Wrapper.m_PlayerFull_jump;
-        public InputAction @jumphold => m_Wrapper.m_PlayerFull_jumphold;
         public InputAction @dash => m_Wrapper.m_PlayerFull_dash;
-        public InputAction @glide => m_Wrapper.m_PlayerFull_glide;
+        public InputAction @jumpglide => m_Wrapper.m_PlayerFull_jumpglide;
         public InputActionMap Get() { return m_Wrapper.m_PlayerFull; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -295,18 +249,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @move.started += instance.OnMove;
             @move.performed += instance.OnMove;
             @move.canceled += instance.OnMove;
-            @jump.started += instance.OnJump;
-            @jump.performed += instance.OnJump;
-            @jump.canceled += instance.OnJump;
-            @jumphold.started += instance.OnJumphold;
-            @jumphold.performed += instance.OnJumphold;
-            @jumphold.canceled += instance.OnJumphold;
             @dash.started += instance.OnDash;
             @dash.performed += instance.OnDash;
             @dash.canceled += instance.OnDash;
-            @glide.started += instance.OnGlide;
-            @glide.performed += instance.OnGlide;
-            @glide.canceled += instance.OnGlide;
+            @jumpglide.started += instance.OnJumpglide;
+            @jumpglide.performed += instance.OnJumpglide;
+            @jumpglide.canceled += instance.OnJumpglide;
         }
 
         private void UnregisterCallbacks(IPlayerFullActions instance)
@@ -314,18 +262,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @move.started -= instance.OnMove;
             @move.performed -= instance.OnMove;
             @move.canceled -= instance.OnMove;
-            @jump.started -= instance.OnJump;
-            @jump.performed -= instance.OnJump;
-            @jump.canceled -= instance.OnJump;
-            @jumphold.started -= instance.OnJumphold;
-            @jumphold.performed -= instance.OnJumphold;
-            @jumphold.canceled -= instance.OnJumphold;
             @dash.started -= instance.OnDash;
             @dash.performed -= instance.OnDash;
             @dash.canceled -= instance.OnDash;
-            @glide.started -= instance.OnGlide;
-            @glide.performed -= instance.OnGlide;
-            @glide.canceled -= instance.OnGlide;
+            @jumpglide.started -= instance.OnJumpglide;
+            @jumpglide.performed -= instance.OnJumpglide;
+            @jumpglide.canceled -= instance.OnJumpglide;
         }
 
         public void RemoveCallbacks(IPlayerFullActions instance)
@@ -355,9 +297,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IPlayerFullActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
-        void OnJumphold(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
-        void OnGlide(InputAction.CallbackContext context);
+        void OnJumpglide(InputAction.CallbackContext context);
     }
 }

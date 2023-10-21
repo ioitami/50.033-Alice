@@ -15,24 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "jump",
-                    "type": "Button",
-                    "id": "c5aabff3-e096-48e6-9fd1-c2952f294521",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "jumphold",
-                    "type": "Button",
-                    "id": "12362d7c-eaa3-4a37-a32d-ffad98eec409",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Hold(duration=0.2,pressPoint=1.401298E-45)",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "dash",
                     "type": "Button",
                     "id": "630659c4-ea03-49bc-b62f-898550e331e7",
@@ -42,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "glide",
+                    "name": "jumpglide",
                     "type": "Button",
                     "id": "1f8f2fec-e58c-4836-abe1-415d6335f965",
                     "expectedControlType": "Button",
@@ -120,17 +102,6 @@
                 },
                 {
                     "name": "",
-                    "id": "748d774e-da3d-42ad-aba3-46ddf39bf7d2",
-                    "path": "<Keyboard>/c",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d56a91f4-2af5-4700-8f0f-fae31ddc3329",
                     "path": "<Keyboard>/x",
                     "interactions": "Tap",
@@ -147,18 +118,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "glide",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1b5963ed-ae04-4a57-8512-053f6b69709e",
-                    "path": "<Keyboard>/c",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "jumphold",
+                    "action": "jumpglide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

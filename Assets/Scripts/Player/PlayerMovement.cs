@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     [Space]
+    public float coyoteTime = 0.2f;
+    public float coyoteTimeCounter;
+    [Space]
     public Vector2 velocity;
     public float xRaw;
     public float yRaw;
@@ -86,6 +89,15 @@ public class PlayerMovement : MonoBehaviour
         yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(xRaw, yRaw);
         //Debug.Log(dir);
+
+        if (collisionDetect.onGround)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
     }
 
     void FixedUpdate()
@@ -204,8 +216,11 @@ public class PlayerMovement : MonoBehaviour
     public void Jump()
     {
         //Jump only if on ground
-        if (collisionDetect.onGround == true && isGliding == false)
+        //if (collisionDetect.onGround == true && isGliding == false)
+        if (isGliding == false)
         {
+            coyoteTimeCounter = 0f;
+
             ReplaceActingVelocity(new Vector2(rigidBody.velocity.x, 0));
             AddActingVelocity(Vector2.up * jumpForce, 0);
         }
@@ -254,44 +269,46 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Glide()
+    public void JumpGlide()
     {
-
-        if(stamina > 0 && isGliding == false && collisionDetect.cannotGlide == false)
+        // If player just got off a ledge, they jump instead of glide
+        if(coyoteTimeCounter <= 0)
         {
-            Debug.Log("EQUIP GLIDER");
+            if (stamina > 0 && isGliding == false && collisionDetect.cannotGlide == false)
+            {
+                Debug.Log("EQUIP GLIDER");
 
-            stamina -= glideEquipCost;
+                stamina -= glideEquipCost;
 
-            ReplaceActingVelocity(new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * glideGravity));
+                ReplaceActingVelocity(new Vector2(rigidBody.velocity.x, rigidBody.velocity.y * glideGravity));
 
-            isGliding = true;
-            ChangePlayerGravity(glideGravity);
+                isGliding = true;
+                ChangePlayerGravity(glideGravity);
 
-            playerAnimator.SetBool("isGliding", true);
+                playerAnimator.SetBool("isGliding", true);
+            }
+            else if (isGliding == true && collisionDetect.onGround == false)
+            {
+                Debug.Log("UNEQUIP GLIDER");
+
+                isGliding = false;
+                ChangePlayerGravity(gravity);
+
+                playerAnimator.SetBool("isGliding", false);
+            }
+
+            if (stamina <= 0)
+            {
+                isGliding = false;
+                playerAnimator.SetBool("isGliding", false);
+                ChangePlayerGravity(gravity);
+            }
         }
-        else if (isGliding == true && collisionDetect.onGround == false)
+        else
         {
-            Debug.Log("UNEQUIP GLIDER");
-
-            isGliding = false;
-            ChangePlayerGravity(gravity);
-
-            playerAnimator.SetBool("isGliding", false);
+            Jump();
         }
 
-        if(stamina <= 0)
-        {
-            isGliding = false;
-            playerAnimator.SetBool("isGliding", false);
-            ChangePlayerGravity(gravity);
-        }
-    }
-
-    IEnumerator WaitToGlide(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Glide();
     }
 
     IEnumerator GlidingStamDrain()
